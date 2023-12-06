@@ -1,0 +1,7 @@
+{
+    "emulator.emulatorPath": "C:\\Users\\KONATE\\AppData\\Local\\Android\\Sdk\\emulator ",
+    "emulator.androidExtraBootArgs": "C:\\Users\\KONATE\\AppData\\Local\\Android\\Sdk\\emulator",
+    "emulator.emulatorPathWindows": "C:\\Users\\KONATE\\AppData\\Local\\Android\\Sdk\\emulator ",
+    "emulator.hasEditorTitleIcon": true,
+    "emulator.androidColdBoot": true
+}
