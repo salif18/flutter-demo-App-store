@@ -38,30 +38,55 @@ class MyContainerItems extends StatelessWidget {
   ];
 
   final newdata = [
-    {"logo":"assets/images/logo1.jfif","title": "Racing cars", "icon": Icons.star_rate_sharp, "numStart": 5},
-    {"logo":"assets/images/logo2.png","title": "Assassin gred", "icon": Icons.star_rate_sharp, "numStart": 4},
-    {"logo":"assets/images/logo4.jfif","title": "Street fighter", "icon": Icons.star_rate_sharp, "numStart": 3},
-    {"logo":"assets/images/logo1.jfif","title": "Zuma", "icon": Icons.star_rate_sharp, "numStart": 2},
-    {"logo":"assets/images/logo3.png","title": "Fruity", "icon": Icons.star_rate_sharp, "numStart": 1}
+    {
+      "logo": "assets/images/logo1.jfif",
+      "title": "Racing cars",
+      "icon": Icons.star_rate_sharp,
+      "numStart": 5
+    },
+    {
+      "logo": "assets/images/logo2.png",
+      "title": "Assassin gred",
+      "icon": Icons.star_rate_sharp,
+      "numStart": 4
+    },
+    {
+      "logo": "assets/images/logo4.jfif",
+      "title": "Street fighter",
+      "icon": Icons.star_rate_sharp,
+      "numStart": 3
+    },
+    {
+      "logo": "assets/images/logo1.jfif",
+      "title": "Zuma",
+      "icon": Icons.star_rate_sharp,
+      "numStart": 2
+    },
+    {
+      "logo": "assets/images/logo3.png",
+      "title": "Fruity",
+      "icon": Icons.star_rate_sharp,
+      "numStart": 1
+    }
   ];
 
   List<Widget> buildStars(int value) {
     switch (value) {
       case 5:
-        return List.generate(
-            5, (index) => const Icon(Icons.star_rate_sharp, color: Colors.amber));
+        return List.generate(5,
+            (index) => const Icon(Icons.star_rate_sharp, color: Colors.amber));
       case 4:
-        return List.generate(
-            4, (index) => const Icon(Icons.star_rate_sharp, color: Colors.amber));
+        return List.generate(4,
+            (index) => const Icon(Icons.star_rate_sharp, color: Colors.amber));
       case 3:
-        return List.generate(
-            3, (index) => const Icon(Icons.star_rate_sharp, color: Colors.amber));
+        return List.generate(3,
+            (index) => const Icon(Icons.star_rate_sharp, color: Colors.amber));
       case 2:
-        return List.generate(
-            2, (index) => const Icon(Icons.star_rate_sharp, color: Colors.amber));
+        return List.generate(2,
+            (index) => const Icon(Icons.star_rate_sharp, color: Colors.amber));
       case 1:
-        return List.generate(
-            1, (index) => const Icon(Icons.star_rate_sharp, color: Colors.amber));
+        return List.generate(1,
+            (index) => const Icon(Icons.star_rate_sharp, color: Colors.amber));
       default:
         return [];
     }
@@ -146,16 +171,13 @@ class MyContainerItems extends StatelessWidget {
                     child: Container(
                       width: 180,
                       height: 150,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
                       child: Center(
                         child: Image.asset(
                           item['photo'] as String,
-                        
-                          //style: const TextStyle(fontSize: 20, color: Colors.white),
                         ),
-                      ),
-                      decoration: BoxDecoration(
-                        color: item['color'] as Color,
-                        borderRadius: BorderRadius.circular(10),
                       ),
                     ),
                   ),
