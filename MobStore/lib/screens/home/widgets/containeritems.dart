@@ -32,17 +32,17 @@ class MyContainerItems extends StatelessWidget {
   ];
 
   final data = [
-    {"title": "Basket", "color": Colors.pinkAccent},
-    {"title": "Tenis", "color": Colors.blueGrey},
-    {"title": "Foot", "color": Colors.amber}
+    {"photo": "assets/images/logo1.jfif", "color": Colors.pinkAccent},
+    {"photo": "assets/images/logo2.png", "color": Colors.blueGrey},
+    {"photo": "assets/images/logo3.png", "color": Colors.amber}
   ];
 
   final newdata = [
-    {"title": "Racing cars", "icon": Icons.star_rate_sharp, "numStart": 5},
-    {"title": "Assassin gred", "icon": Icons.star_rate_sharp, "numStart": 4},
-    {"title": "Street fighter", "icon": Icons.star_rate_sharp, "numStart": 3},
-    {"title": "Zuma", "icon": Icons.star_rate_sharp, "numStart": 2},
-    {"title": "Fruity", "icon": Icons.star_rate_sharp, "numStart": 1}
+    {"logo":"assets/images/logo1.jfif","title": "Racing cars", "icon": Icons.star_rate_sharp, "numStart": 5},
+    {"logo":"assets/images/logo2.png","title": "Assassin gred", "icon": Icons.star_rate_sharp, "numStart": 4},
+    {"logo":"assets/images/logo4.jfif","title": "Street fighter", "icon": Icons.star_rate_sharp, "numStart": 3},
+    {"logo":"assets/images/logo1.jfif","title": "Zuma", "icon": Icons.star_rate_sharp, "numStart": 2},
+    {"logo":"assets/images/logo3.png","title": "Fruity", "icon": Icons.star_rate_sharp, "numStart": 1}
   ];
 
   List<Widget> buildStars(int value) {
@@ -147,9 +147,10 @@ class MyContainerItems extends StatelessWidget {
                       width: 180,
                       height: 150,
                       child: Center(
-                        child: Text(
-                          item['title'] as String,
-                          style: const TextStyle(fontSize: 20, color: Colors.white),
+                        child: Image.asset(
+                          item['photo'] as String,
+                        
+                          //style: const TextStyle(fontSize: 20, color: Colors.white),
                         ),
                       ),
                       decoration: BoxDecoration(
@@ -197,6 +198,7 @@ class MyContainerItems extends StatelessWidget {
                       height: 100,
                       width: 100,
                       color: Colors.grey.withOpacity(0.2),
+                      child: Image.asset(data['logo'] as String),
                     ),
                     Container(
                       width: 150,
