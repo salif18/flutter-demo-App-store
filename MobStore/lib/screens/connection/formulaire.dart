@@ -41,6 +41,9 @@ class _MyFormState extends State<MyForm> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+      appBar: AppBar(
+        title:const Text("Connexion")
+      ),
     body:SingleChildScrollView(
       child: Form(
         key: _formKey,
@@ -144,8 +147,11 @@ class _MyFormState extends State<MyForm> {
             ),
             
             ElevatedButton(
-              onPressed:_sendFormData , 
-              child: const Text('Envoyer',)
+              onPressed:_sendFormData ,
+              style: const ButtonStyle(
+                backgroundColor: MaterialStatePropertyAll(Color.fromARGB(255, 167, 54, 238),)
+              ), 
+              child: const Text('Envoyer',style:TextStyle(color: Colors.white, fontSize: 18))
             ),
             
           ],

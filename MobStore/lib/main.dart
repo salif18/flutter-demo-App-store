@@ -38,28 +38,28 @@ class _MyAppState extends State<MyApp> {
           type: BottomNavigationBarType.fixed,
           currentIndex: _currentIndex,
           onTap: (index) => _selectedPages(index),
-          selectedItemColor: const Color.fromARGB(255, 209, 73, 233),
+          selectedItemColor: const Color.fromARGB(255, 167, 54, 238),
           unselectedItemColor: Colors.grey,
         
           items:const [
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: Icon(Icons.home, size: 35,),
               label: "Home"
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.search),
+              icon: Icon(Icons.search, size: 35,),
               label: "Search App"
             ),
              BottomNavigationBarItem(
-              icon: Icon(Icons.stroller),
+              icon: Icon(Icons.stroller,size: 35,),
               label:"Store"
             ), 
             BottomNavigationBarItem(
-              icon: Icon(Icons.login),
+              icon: Icon(Icons.login, size: 35,),
               label:"Connexion"
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
+              icon: Icon(Icons.settings, size: 35,),
               label:"Settings"
             ),
             

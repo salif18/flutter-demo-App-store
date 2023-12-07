@@ -11,7 +11,7 @@ class MyContainerItems extends StatelessWidget {
     },
     {
       "icon": Icons.sports_basketball_rounded,
-      "color": const Color.fromARGB(255, 116, 15, 141),
+      "color": const Color.fromARGB(255, 167, 54, 238),
       "title": "Basket"
     },
     {
@@ -241,13 +241,18 @@ class MyContainerItems extends StatelessWidget {
                         ],
                       ),
                     ),
-                    ElevatedButton(
+                    const ElevatedButton(
                       onPressed: null,
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blue, // Couleur du bouton
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStatePropertyAll(Color.fromARGB(255, 167, 54, 238)),
                       ),
-                      child: const Text(
+                      child: Text(
                         'Installer',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w400
+                          ),
                       ),
                     ),
                   ],
