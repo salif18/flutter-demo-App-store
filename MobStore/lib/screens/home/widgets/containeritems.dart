@@ -94,7 +94,7 @@ class MyContainerItems extends StatelessWidget {
     },
     {
       "logo": "assets/images/logo7.jfif",
-      "title": "Naruto Shupi den",
+      "title": "Naruto ",
       "icon": Icons.star_rate_sharp,
       "numStart": 2
     },
@@ -136,8 +136,8 @@ class MyContainerItems extends StatelessWidget {
       decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(20),
-          topRight: Radius.circular(20),
+          topLeft: Radius.circular(50),
+          topRight: Radius.circular(50),
         ),
       ),
       child: Column(
@@ -211,7 +211,7 @@ class MyContainerItems extends StatelessWidget {
                                 SingleScreen(data: item)));
                   },
                   child: Card(
-                    elevation: 10,
+                    elevation: 3,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),

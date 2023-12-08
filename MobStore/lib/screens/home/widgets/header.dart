@@ -31,10 +31,10 @@ class Header extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Mob store",
+              Text("Mob Store",
               style: TextStyle(
-                fontSize:25, 
-                fontWeight: FontWeight.bold, 
+                fontSize:28, 
+                fontWeight: FontWeight.w900, 
                 color: Colors.white 
                 ),),
                 Text("Magasin des applications",
