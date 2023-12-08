@@ -11,6 +11,17 @@ class Header extends StatelessWidget {
         top: MediaQuery.of(context).padding.top,
         left: 15,
         right: 20,
+       
+      ), 
+      decoration:const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors:  [
+            Color.fromARGB(255, 157, 1, 255),
+            Color.fromARGB(255, 167, 54, 238),
+          ]
+          )
       ),
       child:const Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

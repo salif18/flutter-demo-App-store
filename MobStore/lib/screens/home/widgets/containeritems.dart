@@ -1,3 +1,4 @@
+import 'package:app/screens/home/details/singlescreen.dart';
 import 'package:flutter/material.dart';
 
 class MyContainerItems extends StatelessWidget {
@@ -6,17 +7,17 @@ class MyContainerItems extends StatelessWidget {
   final categories = [
     {
       "icon": Icons.track_changes_outlined,
-      "color": const Color.fromARGB(255, 35, 141, 228),
+      "color": const Color(0XFF605CF4),
       "title": "Arcade"
     },
     {
       "icon": Icons.sports_basketball_rounded,
-      "color": const Color.fromARGB(255, 167, 54, 238),
+      "color": const Color(0XFFFC77A6),
       "title": "Basket"
     },
     {
       "icon": Icons.casino_outlined,
-      "color": const Color.fromARGB(255, 35, 228, 67),
+      "color": const Color(0XFF4391FF),
       "title": "Casino"
     },
     {
@@ -26,18 +27,41 @@ class MyContainerItems extends StatelessWidget {
     },
     {
       "icon": Icons.drive_eta_rounded,
-      "color": const Color.fromARGB(255, 228, 35, 35),
+      "color": const Color(0XFF7182F2),
       "title": "Cars"
     },
   ];
 
-  final data = [
-    {"photo": "assets/images/logo1.jfif", "color": Colors.pinkAccent},
-    {"photo": "assets/images/logo2.png", "color": Colors.blueGrey},
-    {"photo": "assets/images/logo3.png", "color": Colors.amber}
+  final logos = [
+    {
+      "photo": "assets/images/logo8.jfif",
+      "title": "Rally", 
+      "color": Colors.amber
+    },
+    {
+      "photo": "assets/images/logo1.jfif",
+      "title": "Fallen",
+      "color": Colors.pinkAccent
+    },
+    {
+      "photo": "assets/images/logo2.png",
+      "title": "Ninja",
+      "color": Colors.blueGrey
+    },
+    {
+      "photo": "assets/images/logo7.jfif",
+      "title": "Rally", 
+      "color": Colors.amber
+    },
+    {
+      "photo": "assets/images/logo3.png",
+      "title": "Rally", 
+      "color": Colors.amber
+    },
+    
   ];
 
-  final newdata = [
+  final games = [
     {
       "logo": "assets/images/logo1.jfif",
       "title": "Racing cars",
@@ -57,14 +81,26 @@ class MyContainerItems extends StatelessWidget {
       "numStart": 3
     },
     {
-      "logo": "assets/images/logo1.jfif",
-      "title": "Zuma",
+      "logo": "assets/images/logo5.jfif",
+      "title": "EA sport",
+      "icon": Icons.star_rate_sharp,
+      "numStart": 3
+    },
+    {
+      "logo": "assets/images/logo6.jfif",
+      "title": "Street fighter",
+      "icon": Icons.star_rate_sharp,
+      "numStart": 3
+    },
+    {
+      "logo": "assets/images/logo7.jfif",
+      "title": "Naruto Shupi den",
       "icon": Icons.star_rate_sharp,
       "numStart": 2
     },
     {
-      "logo": "assets/images/logo3.png",
-      "title": "Fruity",
+      "logo": "assets/images/logo8.jfif",
+      "title": "Racing",
       "icon": Icons.star_rate_sharp,
       "numStart": 1
     }
@@ -95,7 +131,7 @@ class MyContainerItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 1200,
+      height: 1300,
       padding: const EdgeInsets.symmetric(vertical: 40),
       decoration: const BoxDecoration(
         color: Colors.white,
@@ -106,6 +142,7 @@ class MyContainerItems extends StatelessWidget {
       ),
       child: Column(
         children: [
+          //premier enfant
           SizedBox(
             height: 140,
             child: ListView.separated(
@@ -139,6 +176,8 @@ class MyContainerItems extends StatelessWidget {
               itemCount: categories.length,
             ),
           ),
+
+          //deuxieme enfant
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: const Row(
@@ -154,15 +193,23 @@ class MyContainerItems extends StatelessWidget {
               ],
             ),
           ),
+
+          //troisieme enfant
           SizedBox(
             height: 200,
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
               padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
               itemBuilder: (BuildContext context, int index) {
-                final item = data[index];
+                final item = logos[index];
                 return GestureDetector(
-                  onTap: null,
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                SingleScreen(data: item)));
+                  },
                   child: Card(
                     elevation: 10,
                     shape: RoundedRectangleBorder(
@@ -174,10 +221,13 @@ class MyContainerItems extends StatelessWidget {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                       ),
+                      
                       child: Center(
-                        child: Image.asset(
+                        child:Hero(
+                          tag:logos[index],
+                          child:Image.asset(
                           item['photo'] as String,
-                        ),
+                        )),
                       ),
                     ),
                   ),
@@ -187,12 +237,15 @@ class MyContainerItems extends StatelessWidget {
                   const SizedBox(
                     width: 33,
                   )),
-              itemCount: data.length,
+              itemCount: logos.length,
             ),
           ),
+
           const SizedBox(
             height: 5,
           ),
+
+          //quatrieme enfant
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: const Row(
@@ -205,17 +258,22 @@ class MyContainerItems extends StatelessWidget {
               ],
             ),
           ),
+
           const SizedBox(
             height: 10,
           ),
+
+          //cinquieme enfant
           Column(
-            children: newdata.map((data) {
+            children: games.map((data) {
               return Container(
+                
                 height: 110,
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    
                     Container(
                       height: 100,
                       width: 100,
@@ -244,19 +302,21 @@ class MyContainerItems extends StatelessWidget {
                     const ElevatedButton(
                       onPressed: null,
                       style: ButtonStyle(
-                        backgroundColor: MaterialStatePropertyAll(Color.fromARGB(255, 167, 54, 238)),
+                        backgroundColor: MaterialStatePropertyAll(
+                            Color.fromARGB(255, 167, 54, 238)),
                       ),
                       child: Text(
                         'Installer',
                         style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w400
-                          ),
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w400),
                       ),
                     ),
+                    
                   ],
                 ),
+                
               );
             }).toList(),
           ),
