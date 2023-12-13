@@ -6,38 +6,29 @@ class MySettings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 4, 
+      length: 4,
       child: Scaffold(
         appBar: AppBar(
-          bottom: const TabBar(
-            tabs: [
-              Tab(icon: Icon(Icons.playlist_add_check_circle,)),
-              Tab(icon:Icon(Icons.desktop_mac)),
-              Tab(icon:Icon(Icons.devices_sharp)),
-              Tab(icon:Icon(Icons.hotel_class_rounded))
-            ]
-            ),
+          title: const Text("Settings"),
+          bottom: const TabBar(tabs: [
+            Tab(
+                icon: Icon(
+              Icons.notifications,
+            )),
+            Tab(icon: Icon(Icons.security)),
+            Tab(icon: Icon(Icons.label_important_outline_rounded)),
+            Tab(icon: Icon(Icons.computer_outlined))
+          ]),
         ),
-        body:const TabBarView(
-         children: [
-          Column(
-            children:[
-              Text('first page')
-              ]
-          ),
-           Column(
-            children:[Text('second page')]
-          ),
-           Column(
-            children:[Text('thirst page')]
-          ),
-           Column(
-            children:[Text('forst page')]
-          )
-         ],
-        
+        body: const TabBarView(
+          children: [
+            Column(children: [Text('first page')]),
+            Column(children: [Text('second page')]),
+            Column(children: [Text('thirst page')]),
+            Column(children: [Text('forst page')])
+          ],
         ),
       ),
-      );
+    );
   }
 }

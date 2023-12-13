@@ -1,3 +1,5 @@
+import 'package:app/screens/home/details/widgets/description.dart';
+import 'package:app/screens/home/details/widgets/gallery.dart';
 import 'package:flutter/material.dart';
 
 class SingleScreen extends StatelessWidget {
@@ -12,7 +14,7 @@ final data;
       body:CustomScrollView(
       slivers: [
             SliverAppBar(
-              expandedHeight: 300.0,
+              expandedHeight: 360.0,
               floating: false,
               pinned: true,
               flexibleSpace: FlexibleSpaceBar(
@@ -33,10 +35,74 @@ final data;
             ),
             SliverToBoxAdapter(
               child: Container(
-                height: 200.0,
-                color: Colors.blue,
+                height: 700.0,
+                color: const Color.fromARGB(255, 243, 243, 243),
                 alignment: Alignment.center,
-                child: const Text('Content Goes Here'),
+                child: Column(
+                  
+                  children: [ 
+                    Container(
+                     height: 120,
+                     color: const Color.fromARGB(255, 243, 243, 243),
+                    child:Row(
+                      children: [
+                         ClipRRect(
+                          child: Image.asset(data['photo'],width: 100,height: 100,),
+                         ),
+                         Column(
+                          children:[ 
+                           const SizedBox(height: 20,),
+                            SizedBox(child:Text(data['title'] as String, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600,),)),
+                            const SizedBox(height: 10,),
+                            const SizedBox(
+                              child:Row(
+                                children: [
+                                  Icon(Icons.star, color: Colors.amber,),
+                                  Text('4.4'),
+                                ],
+                              ),
+                              )
+                          ] ,
+                         ),
+                      ],
+                    ),
+                    ),
+                    const SizedBox(height: 10,),
+                    MyGallerys(data:data),
+                    const SizedBox(height: 25,),
+                    Description(data:data),
+                    const SizedBox(height: 20,),
+                    const SizedBox(
+                    child:Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [ 
+                        Text('Ratings and review '),
+                        Row(
+                          children: [ 
+                            Text("4.8", style: TextStyle(fontSize: 30, fontWeight: FontWeight.w900),),
+                            Row(
+                              children: [ 
+                                Icon(Icons.star , color:Colors.amber),
+                                Icon(Icons.star , color:Colors.amber),
+                                Icon(Icons.star , color:Colors.amber),
+                              ],
+                            )
+                          ],
+                        ),
+                        SizedBox(height:20),
+                        ElevatedButton(
+                          onPressed: null, 
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStatePropertyAll(
+                              Colors.purple
+                            ),
+                          ),
+                          child: Text('Installer', style:TextStyle(fontSize: 16, color: Colors.white)))
+                      ],
+                    ),
+                    ),
+                  ],
+                ),
               ),
             ),
       ],
@@ -47,25 +113,25 @@ final data;
 
 class MySliverPersistentHeaderDelegate extends SliverPersistentHeaderDelegate {
   @override
-  double get minExtent => 60.0;
+  double get minExtent => 40.0;
 
   @override
-  double get maxExtent => 120.0;
+  double get maxExtent => 40.0;
 
   @override
   Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Container(
       decoration: const BoxDecoration(
-      color: Colors.green,
+      color: Color.fromARGB(255, 255, 255, 255),
       borderRadius: BorderRadius.only(
-        topLeft: Radius.circular(40),
-        topRight: Radius.circular(40)
+        topLeft: Radius.circular(30),
+        topRight: Radius.circular(30)
         
       )
       ),
       alignment: Alignment.center,
       
-      child: const Text('Persistent Header'),
+      child: const Icon(Icons.linear_scale, size: 30, color: Colors.purple),
       
     );
   }

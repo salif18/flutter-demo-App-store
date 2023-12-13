@@ -28,7 +28,8 @@ class MyContainerItems extends StatelessWidget {
     {
       "icon": Icons.drive_eta_rounded,
       "color": const Color(0XFF7182F2),
-      "title": "Cars"
+      "title": "Cars",
+      
     },
   ];
 
@@ -36,27 +37,55 @@ class MyContainerItems extends StatelessWidget {
     {
       "photo": "assets/images/logo8.jfif",
       "title": "Rally", 
-      "color": Colors.amber
+      "color": Colors.amber,
+       "categorie":"",
+      "details":"L'extrait standard de Lorem Ipsum utilisé depuis le XVIè siècle est reproduit ci-dessous pour les curieux. Les sections 1.10.32 et 1.10.33 du De Finibus Bonorum et Malorum de Cicéron sont aussi reproduites dans leur version originale, accompagnée de la traduction anglaise de H. Rackham (1914)",
+      "galeries":[
+        "assets/images/"
+      ],
     },
     {
       "photo": "assets/images/logo1.jfif",
       "title": "Fallen",
-      "color": Colors.pinkAccent
+      "color": Colors.pinkAccent,
+      "categorie":"",
+      "details":"L'extrait standard de Lorem Ipsum utilisé depuis le XVIè siècle est reproduit ci-dessous pour les curieux. Les sections 1.10.32 et 1.10.33 du De Finibus Bonorum et Malorum de Cicéron sont aussi reproduites dans leur version originale, accompagnée de la traduction anglaise de H. Rackham (1914)",
+      "galeries":[
+        "assets/images/"
+      ],
     },
     {
       "photo": "assets/images/logo2.png",
       "title": "Ninja",
-      "color": Colors.blueGrey
+      "color": Colors.blueGrey,
+       "categorie":"",
+      "details":"L'extrait standard de Lorem Ipsum utilisé depuis le XVIè siècle est reproduit ci-dessous pour les curieux. Les sections 1.10.32 et 1.10.33 du De Finibus Bonorum et Malorum de Cicéron sont aussi reproduites dans leur version originale, accompagnée de la traduction anglaise de H. Rackham (1914)",
+      "galeries":[
+        "assets/images/"
+      ],
     },
     {
       "photo": "assets/images/logo7.jfif",
       "title": "Rally", 
-      "color": Colors.amber
+      "color": Colors.amber,
+       "categorie":"",
+      "details":"L'extrait standard de Lorem Ipsum utilisé depuis le XVIè siècle est reproduit ci-dessous pour les curieux. Les sections 1.10.32 et 1.10.33 du De Finibus Bonorum et Malorum de Cicéron sont aussi reproduites dans leur version originale, accompagnée de la traduction anglaise de H. Rackham (1914)",
+      "galeries":[
+        "assets/images/"
+      ],
     },
     {
       "photo": "assets/images/logo3.png",
       "title": "Rally", 
-      "color": Colors.amber
+      "color": Colors.amber,
+       "categorie":"",
+      "details":"L'extrait standard de Lorem Ipsum utilisé depuis le XVIè siècle est reproduit ci-dessous pour les curieux. Les sections 1.10.32 et 1.10.33 du De Finibus Bonorum et Malorum de Cicéron sont aussi reproduites dans leur version originale, accompagnée de la traduction anglaise de H. Rackham (1914)",
+      "galeries":[
+        "assets/images/logo1.jfif",
+        "assets/images/logo1.jfif",
+        "assets/images/logo1.jfif",
+        "assets/images/logo1.jfif",
+      ],
     },
     
   ];
@@ -273,12 +302,16 @@ class MyContainerItems extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    
-                    Container(
+                    GestureDetector(
+                      // onTap: (){
+                      //   Navigator.push(context , MaterialPageRoute(builder: (context)=> SingleScreen(data:data)));
+                      // },
+                    child:Container(
                       height: 100,
                       width: 100,
                       color: Colors.grey.withOpacity(0.2),
                       child: Image.asset(data['logo'] as String),
+                    ),
                     ),
                     Container(
                       width: 150,

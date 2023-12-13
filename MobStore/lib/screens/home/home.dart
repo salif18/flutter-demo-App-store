@@ -8,8 +8,8 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-     backgroundColor: Color.fromARGB(255, 167, 54, 238),
+    return Scaffold(
+      backgroundColor: Color.fromARGB(255, 167, 54, 238),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -18,7 +18,7 @@ class Home extends StatelessWidget {
             MyContainerItems(),
           ],
         ),
-        ),
+      ),
     );
   }
 }
